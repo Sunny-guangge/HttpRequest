@@ -1,5 +1,11 @@
 # HttpRequest
 网络封装的请求  上传文件
+
+post和get都是一种请求方式，表单（或其他东西）是它们传输的内容，也就是说get也能传输表单，他们在传输时有些不同：get是把参数加到所指的URL中，值和表单内各个字段一一对应，也就是完全暴露出来的；post也会先将值和字段一一对应，但是是放到传输的body中，用户看不到这个过程，但是你可以通过打印post的body看到值和字段的对应与get是一样的。
+而mutlpart formdata则是针对body的一个协议，它通过boundary把各个字段及其对应的值与其他内容分隔开，与普通post相比只是构造的body不一样，也能以表单的方式传输。
+
+
+
 ```python
 //分界线的标识符
     NSString *TWITTERFON_FORM_BOUNDARY = @"AaB03x";
